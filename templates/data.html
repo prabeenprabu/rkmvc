@@ -37,7 +37,7 @@
                 {% for i in range(0,7) %}
                 {% if (ese[i] < 30) %} <div class="col-12 d-md-flex justify-content-between mks fail">
                     <div class="sub">{{subjects[i]}}</div>
-                    <div class="num">{{marks[i]}}</div>
+                    <div class="num text-lt-red">{{marks[i]}}</div>
             </div>
             {% else %}
             <div class="col-12 d-md-flex justify-content-between mks pass">

@@ -11,6 +11,7 @@ $custom-colors: (
     "orange": #e76f51,
     "mint-blue": #cbf3f0,
     "lt-yellow": #fff3b0,
+    "lt-red": #ff8fa3,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
