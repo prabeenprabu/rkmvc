@@ -48,6 +48,17 @@ a {
   border-radius: 0.2rem 0 0 0.2rem;
   background-color: #52b788;
   box-shadow: -4px 0px 23px 1px rgb(82, 183, 136);
+  animation-name: flash;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.content .pass:nth-of-type(even):after {
+  animation-delay: calc(0.2s * var(--i));
+}
+.content .pass:nth-of-type(odd)::after {
+  animation-delay: calc(0.4s * var(--i));
 }
 .content .fail::after {
   content: "";
@@ -59,8 +70,24 @@ a {
   border-radius: 0.2rem 0 0 0.2rem;
   background-color: #e63946;
   box-shadow: -4px 0px 23px 1px rgb(230, 57, 70);
+  animation-name: flash;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.content .fail:nth-of-type(even)::after {
+  animation-delay: calc(0.1s * var(--i));
+}
+.content .fail:nth-of-type(odd):after {
+  animation-delay: calc(0.3s * var(--i));
 }
 
+@keyframes flash {
+  25%, 75% {
+    box-shadow: none;
+  }
+}
 @media screen and (max-width: 480px) {
   .num {
     margin-top: 0.5rem;

@@ -58,6 +58,17 @@ a {
         border-radius: 0.2rem 0 0 0.2rem;
         background-color: $lt-green;
         box-shadow: -4px 0px 23px 1px rgba(82, 183, 136, 1);
+        animation-name: flash;
+        animation-duration: 2.5s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+    }
+    .pass:nth-of-type(even):after {
+        animation-delay: calc(0.2s * var(--i));
+    }
+    .pass:nth-of-type(odd)::after {
+        animation-delay: calc(0.4s * var(--i));
     }
     .fail::after {
         content: "";
@@ -69,6 +80,31 @@ a {
         border-radius: 0.2rem 0 0 0.2rem;
         background-color: $red;
         box-shadow: -4px 0px 23px 1px rgba(230, 57, 70, 1);
+        animation-name: flash;
+        animation-duration: 2.5s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+    }
+    .fail:nth-of-type(even)::after {
+        animation-delay: calc(0.1s * var(--i));
+    }
+    .fail:nth-of-type(odd):after {
+        animation-delay: calc(0.3s * var(--i));
+    }
+}
+
+@keyframes flash {
+    0%,
+    50%,
+    100% {
+        // opacity: 1;
+    }
+
+    25%,
+    75% {
+        // opacity: 0;
+        box-shadow: none;
     }
 }
 
