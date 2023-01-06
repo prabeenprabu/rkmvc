@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+body {
+  color: #edf2f4;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.start .container {
+  min-height: 76vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start .container .forms {
+  width: 100%;
+}
+.start .container .label {
+  display: flex;
+  align-items: center;
+}
+
+.content .name {
+  font-size: 1.3rem;
+}
+.content .mks {
+  position: relative;
+}
+.content .mks .num {
+  margin-right: 0.84rem;
+  font-weight: bold;
+  text-align: center;
+}
+.content .heading .title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.content .pass::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 100%;
+  border-radius: 0.2rem 0 0 0.2rem;
+  background-color: #52b788;
+  box-shadow: -4px 0px 23px 1px rgb(82, 183, 136);
+}
+.content .fail::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 100%;
+  border-radius: 0.2rem 0 0 0.2rem;
+  background-color: #e63946;
+  box-shadow: -4px 0px 23px 1px rgb(230, 57, 70);
+}
+
+@media screen and (max-width: 480px) {
+  .num {
+    margin-top: 0.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */
