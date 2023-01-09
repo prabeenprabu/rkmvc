@@ -69,6 +69,8 @@ def check():
 
         else:
             return render_template("index.html")
+    if request.method == "GET":
+        return render_template("index.html")
 
 
 if __name__ == "__main__":
