@@ -55,9 +55,8 @@ def check():
                 total = []
                 for i in range(1, 8):
                     mainSubjects.append(subjects[i])
-                    mainEse.append(int(ese[i]))
-                    total.append(int(tot[i]))
-
+                    mainEse.append(ese[i])
+                    total.append(tot[i])
                 return render_template(
                     "data.html",
                     name=name,
