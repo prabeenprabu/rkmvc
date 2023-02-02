@@ -95,6 +95,17 @@ a {
     }
 }
 
+.box {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $lt-green;
+    padding: 14px 16px;
+    color: $light;
+}
+.box:focus {
+    border: none;
+}
+
 @keyframes flash {
     0%,
     50%,
