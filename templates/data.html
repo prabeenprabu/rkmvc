@@ -34,13 +34,13 @@
                     <div class="sub title text-lt-yellow">Subjects</div>
                     <div class="num text-lt-yellow">Total out of 100</div>
                 </div>
-                {% for i in range(0,7) %}
-                {% if (ese[i] < "30" ) %} <div class="col-12 d-md-flex justify-content-between mks fail"
+                {% for i in range(0, idx) %}
+                {% if (ese[i] < 30 ) %} <div class="col-12 d-md-flex justify-content-between mks fail"
                     style="--i: {{ i }}">
                     <div class="sub">{{subjects[i]}}</div>
                     <div class="num text-lt-red">{{marks[i]}}</div>
             </div>
-            {% elif (ese[i] >= "30") %}
+            {% elif (ese[i] >= 30) %}
             <div class="col-12 d-md-flex justify-content-between mks pass" style="--i: {{ i }}">
                 <div class="sub">{{subjects[i]}}</div>
                 <div class="num text-mint-blue">{{marks[i]}}</div>

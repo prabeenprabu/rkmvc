@@ -45,18 +45,24 @@ def check():
                 subjects = soup.find_all("td", width="666")
                 ese = soup.find_all("td", width="49")
                 tot = soup.find_all("td", width="51")
+                regEnd = "End Of Statement"
+                idx = 0
                 # print(len(subjects))
                 for i in range(0, len(subjects)):
                     subjects[i] = subjects[i].get_text()
                     ese[i] = ese[i].get_text()
                     tot[i] = tot[i].get_text()
+                    if re.search(regEnd, subjects[i]):
+                        idx = i
+
                 mainSubjects = []
                 mainEse = []
                 total = []
-                for i in range(1, 8):
+                for i in range(1, idx):
                     mainSubjects.append(subjects[i])
-                    mainEse.append(ese[i])
+                    mainEse.append(int(ese[i]))
                     total.append(tot[i])
+
                 return render_template(
                     "data.html",
                     name=name,
@@ -65,6 +71,7 @@ def check():
                     ese=mainEse,
                     marks=total,
                     url=url + regNo,
+                    idx=idx - 1,
                 )
 
         else:
