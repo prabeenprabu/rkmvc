@@ -4,44 +4,102 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.start .container {
-  height: 50vh;
+a {
+  text-decoration: none;
 }
-.start .container .row {
+
+.start .container {
+  min-height: 76vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start .container .forms {
+  width: 100%;
+}
+.start .container .label {
+  display: flex;
+  align-items: center;
+}
+
+.content .name {
+  font-size: 1.3rem;
+}
+.content .mks {
   position: relative;
 }
-.start .container .alert {
-  position: absolute;
-  z-index: 1000;
-  top: 90%;
-  left: 0;
+.content .mks .num {
+  margin-right: 0.84rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.08cm;
+}
+.content .heading .title {
+  width: 100%;
+  text-align: center;
   font-size: 1.3rem;
-  color: transparent;
+}
+.content .pass::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 100%;
+  border-radius: 0.2rem 0 0 0.2rem;
+  background-color: #52b788;
+  box-shadow: -4px 0px 23px 1px rgb(82, 183, 136);
+  animation-name: flash;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.content .pass:nth-of-type(even):after {
+  animation-delay: calc(0.2s * var(--i));
+}
+.content .pass:nth-of-type(odd)::after {
+  animation-delay: calc(0.4s * var(--i));
+}
+.content .fail::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 100%;
+  border-radius: 0.2rem 0 0 0.2rem;
+  background-color: #e63946;
+  box-shadow: -4px 0px 23px 1px rgb(230, 57, 70);
+  animation-name: flash;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.content .fail:nth-of-type(even)::after {
+  animation-delay: calc(0.1s * var(--i));
+}
+.content .fail:nth-of-type(odd):after {
+  animation-delay: calc(0.3s * var(--i));
 }
 
-.alertShow {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-          animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #52b788;
+  padding: 14px 16px;
+  color: #edf2f4;
+  outline: none;
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    color: transparent;
-    opacity: 0;
-  }
-  100% {
-    color: #e63946;
-    opacity: 1;
+@keyframes flash {
+  25%, 75% {
+    box-shadow: none;
   }
 }
-
-@keyframes fade-in {
-  0% {
-    color: transparent;
-    opacity: 0;
-  }
-  100% {
-    color: #e63946;
-    opacity: 1;
+@media screen and (max-width: 480px) {
+  .num {
+    margin-top: 0.5rem;
   }
 }/*# sourceMappingURL=main.css.map */

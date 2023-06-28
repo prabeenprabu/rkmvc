@@ -95,15 +95,13 @@ a {
     }
 }
 
-.box {
+input {
     background: transparent;
     border: none;
     border-bottom: 2px solid $lt-green;
     padding: 14px 16px;
     color: $light;
-}
-.box:focus {
-    border: none;
+    outline: none;
 }
 
 @keyframes flash {

@@ -84,16 +84,13 @@ a {
   animation-delay: calc(0.3s * var(--i));
 }
 
-.box {
+input {
   background: transparent;
   border: none;
   border-bottom: 2px solid #52b788;
   padding: 14px 16px;
   color: #edf2f4;
-}
-
-.box:focus {
-  border: none;
+  outline: none;
 }
 
 @keyframes flash {
